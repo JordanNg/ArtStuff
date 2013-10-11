@@ -64,17 +64,25 @@
                                     <constraint firstItem="2YA-cN-YjD" firstAttribute="bottom" secondItem="93H-eH-Frq" secondAttribute="bottom" type="default" id="sgk-tg-Ffs"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-y4-9pE" customClass="AAGrayscaleview">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="93H-eH-Frq" firstAttribute="leading" secondItem="pmL-qP-TaF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="00w-Wg-63i"/>
+                            <constraint firstItem="vLY-y4-9pE" firstAttribute="top" secondItem="pmL-qP-TaF" secondAttribute="top" constant="119" id="DT3-09-B8W"/>
+                            <constraint firstItem="vLY-y4-9pE" firstAttribute="leading" secondItem="pmL-qP-TaF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="U5p-1s-CDw"/>
+                            <constraint firstItem="vLY-y4-9pE" firstAttribute="top" secondItem="93H-eH-Frq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZV8-T1-hec"/>
                             <constraint firstItem="93H-eH-Frq" firstAttribute="top" secondItem="pmL-qP-TaF" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aQJ-jw-BVq"/>
                             <constraint firstAttribute="trailing" secondItem="93H-eH-Frq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bf1-WP-WgO"/>
-                            <constraint firstAttribute="bottom" secondItem="93H-eH-Frq" secondAttribute="bottom" constant="849" id="wZR-Sn-JYl"/>
+                            <constraint firstAttribute="trailing" secondItem="vLY-y4-9pE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eeu-ts-ffd"/>
+                            <constraint firstAttribute="bottom" secondItem="vLY-y4-9pE" secondAttribute="bottom" constant="750" id="o1L-Gh-ZTZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colors!" id="nV9-Zv-lYf"/>
                     <connections>
+                        <outlet property="grayscaleColorView" destination="vLY-y4-9pE" id="3OU-QS-QZS"/>
                         <outlet property="secondColorView" destination="2YA-cN-YjD" id="xdT-GD-SoN"/>
                     </connections>
                 </viewController>
@@ -102,6 +110,27 @@
             <point key="canvasLocation" x="131" y="-537"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AAColorView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AAColorView.h"/>
+        </class>
+        <class className="AAColorsVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AAColorsVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="grayscaleColorView" candidateClass="AAGrayscaleview"/>
+                <relationship kind="outlet" name="secondColorView" candidateClass="AAColorView"/>
+            </relationships>
+        </class>
+        <class className="AAGrayscaleview" superclassName="AAColorView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AAGrayscaleview.h"/>
+        </class>
+        <class className="AAViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AAViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,8 +9,10 @@
 #import "AAColorsVC.h"
 #import "AAColorView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AAGrayscaleview.h"
 
 @interface AAColorsVC ()
+@property (weak, nonatomic) IBOutlet AAGrayscaleview *grayscaleColorView;
 @property (weak, nonatomic) IBOutlet AAColorView *secondColorView;
 @property (strong, nonatomic) CADisplayLink *displayLink;
 
@@ -28,6 +30,7 @@
     
     CGFloat percentage = [dateComps second] / 60.0;
     [self.secondColorView changeColorForPercentage:percentage];
+    [self.grayscaleColorView changeColorForPercentage:percentage];
 }
 
 - (void)viewDidLoad
